@@ -1,0 +1,13 @@
+# This file is a template, and might need editing before it works on your project.
+# Lifted from: https://about.gitlab.com/2016/03/10/setting-up-gitlab-ci-for-ios-projects/
+# This file assumes an own GitLab CI runner, setup on a macOS system.
+stages:
+  - archive
+
+test_project:
+  stage: build
+  script:
+    - swift test
+  tags:
+    - ios_12-0
+    - xcode_10-0

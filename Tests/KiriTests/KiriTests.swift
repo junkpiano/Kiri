@@ -1,6 +1,5 @@
 import XCTest
 @testable import Kiri
-import Alamofire
 
 final class KiriTests: XCTestCase {
     func testExample() {
@@ -17,13 +16,15 @@ final class KiriTests: XCTestCase {
 class TestResponse {}
 
 class TestRequest: RequestContainer {
+    var path: String = "/testpath"
+    
     var parameters: Parameters?
     
     var encoding: URLEncoding = URLEncoding.queryString
     
     var endpoint: String = "https://example.com"
     
-    var httpMethod: Alamofire.HTTPMethod = .get
+    var httpMethod: HTTPMethod = .get
     
     func response(data: Data) throws -> TestResponse {
         return TestResponse()

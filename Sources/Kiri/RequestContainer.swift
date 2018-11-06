@@ -11,7 +11,8 @@ import Alamofire
 
 public protocol RequestContainer {
     associatedtype responseType
-    var endpoint: String { get set }
+    var endpoint: String { get }
+    var path: String { get }
     var httpMethod: Alamofire.HTTPMethod { get set }
     var parameters: Alamofire.Parameters? { get set }
     var encoding: Alamofire.URLEncoding { get set }

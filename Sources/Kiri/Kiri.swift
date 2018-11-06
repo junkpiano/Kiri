@@ -17,7 +17,7 @@ public class Kiri<T: RequestContainer> {
     }
     
     public func send(completion: @escaping (T.responseType?, Error?) -> Void) {
-        guard let url = URL(string: request.endpoint) else {
+        guard let url = URL(string: request.endpoint + request.path) else {
             return
         }
         

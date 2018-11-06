@@ -9,14 +9,14 @@
 import Foundation
 import Alamofire
 
-class Kiri<T: RequestContainer> {
+public class Kiri<T: RequestContainer> {
     let request: T
     
-    init(request: T) {
+    public init(request: T) {
         self.request = request
     }
     
-    func send(completion: @escaping (T.responseType?, Error?) -> Void) {
+    public func send(completion: @escaping (T.responseType?, Error?) -> Void) {
         guard let url = URL(string: request.endpoint) else {
             return
         }

@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-protocol RequestContainer {
+public protocol RequestContainer {
     associatedtype responseType
     var endpoint: String { get set }
     var httpMethod: Alamofire.HTTPMethod { get set }

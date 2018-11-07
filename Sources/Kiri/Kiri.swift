@@ -16,7 +16,7 @@ public class Kiri<T: RequestContainer> {
         self.request = request
     }
     
-    public func send(completion: @escaping (T.responseType?, Error?) -> Void) {
+    public func send(completion: @escaping (Response?, Error?) -> Void) {
         guard let url = URL(string: request.endpoint + request.path) else {
             return
         }
@@ -30,12 +30,8 @@ public class Kiri<T: RequestContainer> {
             .responseData { (response) in
                 switch response.result {
                 case .success(let data):
-                    do {
-                        let response = try self.request.response(data: data)
-                        completion(response, nil)
-                    } catch {
-                        completion(nil, error)
-                    }
+                    let response = Response(data: data)
+                    completion(response, nil)
                 case .failure(let error):
                     completion(nil, error)
                 }

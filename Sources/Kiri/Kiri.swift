@@ -17,11 +17,7 @@ public class Kiri<T: RequestContainer> {
     }
     
     public func send(completion: @escaping (Response?, Error?) -> Void) {
-        guard let url = URL(string: request.endpoint + request.path) else {
-            return
-        }
-        
-        Alamofire.request(url,
+        Alamofire.request(request.endpoint.appendingPathComponent(request.path),
                           method: request.httpMethod,
                           parameters: request.parameters,
                           encoding: request.encoding,
@@ -30,11 +26,15 @@ public class Kiri<T: RequestContainer> {
             .responseData { (response) in
                 switch response.result {
                 case .success(let data):
-                    let response = Response(data: data, response: response.response)
+                    let response = Response(data: data, response: response.response, request: self.request)
                     completion(response, nil)
                 case .failure(let error):
                     completion(nil, error)
                 }
         }
+    }
+    
+    public func stubResponse(completion: @escaping (Response?, Error?) -> Void) {        
+        completion(self.request.mockResponse, nil)
     }
 }

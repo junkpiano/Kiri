@@ -13,9 +13,11 @@ final class KiriTests: XCTestCase {
     ]
 }
 
-class TestResponse {}
-
 class TestRequest: RequestContainer {
+    var headers: HTTPHeaders {
+        return [:]
+    }
+    
     var path: String = "/testpath"
     
     var parameters: Parameters?
@@ -25,12 +27,4 @@ class TestRequest: RequestContainer {
     var endpoint: String = "https://example.com"
     
     var httpMethod: HTTPMethod = .get
-    
-    func response(data: Data) throws -> TestResponse {
-        return TestResponse()
-    }
-    
-    typealias responseType = TestResponse
-    
-    
 }

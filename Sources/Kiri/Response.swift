@@ -12,8 +12,8 @@ public class Response {
     public let data: Data
     public let response: HTTPURLResponse?
     public let request: RequestContainer
-    
-    init(data: Data, response: HTTPURLResponse?, request: RequestContainer) {
+
+    public init(data: Data, response: HTTPURLResponse?, request: RequestContainer) {
         self.data = data
         self.response = response
         self.request = request
@@ -24,7 +24,7 @@ extension Response {
     public func decodeJSON<T: Decodable>() throws -> T {
         return try JSONDecoder().decode(T.self, from: self.data)
     }
-    
+
     public func plainText() -> String {
         return String(data: self.data, encoding: String.Encoding.utf8) ?? ""
     }

@@ -16,5 +16,5 @@ public protocol RequestContainer {
     var headers: HTTPHeaders { get }
     var parameters: Parameters? { get }
     var encoding: URLEncoding { get }
-    var mockResponse: Response { get }
+    var mockResponse: Response? { get }
 }

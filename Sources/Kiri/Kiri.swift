@@ -11,11 +11,11 @@ import Alamofire
 
 public class Kiri<T: RequestContainer> {
     let request: T
-    
+
     public init(request: T) {
         self.request = request
     }
-    
+
     public func send(completion: @escaping (Response?, Error?) -> Void) {
         Alamofire.request(request.endpoint.appendingPathComponent(request.path),
                           method: request.httpMethod,
@@ -33,8 +33,8 @@ public class Kiri<T: RequestContainer> {
                 }
         }
     }
-    
-    public func stubResponse(completion: @escaping (Response?, Error?) -> Void) {        
+
+    public func stubResponse(completion: @escaping (Response?, Error?) -> Void) {
         completion(self.request.mockResponse, nil)
     }
 }

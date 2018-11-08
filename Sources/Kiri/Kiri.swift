@@ -25,7 +25,7 @@ public class Kiri<T: RequestContainer> {
                           method: request.httpMethod,
                           parameters: request.parameters,
                           encoding: request.encoding,
-                          headers: nil)
+                          headers: request.headers)
             .validate()
             .responseData { (response) in
                 switch response.result {

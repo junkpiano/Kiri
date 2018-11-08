@@ -10,9 +10,11 @@ import Foundation
 
 public class Response {
     public let data: Data
+    public let response: HTTPURLResponse?
     
-    init(data: Data) {
+    init(data: Data, response: HTTPURLResponse?) {
         self.data = data
+        self.response = response
     }
 }
 

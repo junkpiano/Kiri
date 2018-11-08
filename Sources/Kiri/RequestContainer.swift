@@ -10,10 +10,11 @@ import Foundation
 import Alamofire
 
 public protocol RequestContainer {
-    var endpoint: String { get }
+    var endpoint: URL { get }
     var path: String { get }
     var httpMethod: HTTPMethod { get }
     var headers: HTTPHeaders { get }
     var parameters: Parameters? { get }
     var encoding: URLEncoding { get }
+    var mockResponse: Response { get }
 }

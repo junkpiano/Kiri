@@ -9,6 +9,8 @@
 import Foundation
 import Alamofire
 
+// Alamofire Type Wrapper
+
 public typealias HTTPMethod = Alamofire.HTTPMethod
 public typealias Parameters = Alamofire.Parameters
 public typealias URLEncoding = Alamofire.URLEncoding

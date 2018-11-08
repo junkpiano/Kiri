@@ -1,5 +1,5 @@
 //
-//  Types.swift
+//  KiriTypes.swift
 //  Kiri
 //
 //  Created by Yusuke Ohashi on 2018/11/06.
@@ -12,4 +12,4 @@ import Alamofire
 public typealias HTTPMethod = Alamofire.HTTPMethod
 public typealias Parameters = Alamofire.Parameters
 public typealias URLEncoding = Alamofire.URLEncoding
-
+public typealias HTTPHeaders = Alamofire.HTTPHeaders

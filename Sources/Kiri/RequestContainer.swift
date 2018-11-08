@@ -10,11 +10,10 @@ import Foundation
 import Alamofire
 
 public protocol RequestContainer {
-    associatedtype responseType
     var endpoint: String { get }
     var path: String { get }
-    var httpMethod: Alamofire.HTTPMethod { get set }
-    var parameters: Alamofire.Parameters? { get set }
-    var encoding: Alamofire.URLEncoding { get set }
-    func response(data: Data) throws -> responseType
+    var httpMethod: HTTPMethod { get }
+    var headers: HTTPHeaders { get }
+    var parameters: Parameters? { get }
+    var encoding: URLEncoding { get }
 }

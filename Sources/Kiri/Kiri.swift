@@ -30,7 +30,7 @@ public class Kiri<T: RequestContainer> {
             .responseData { (response) in
                 switch response.result {
                 case .success(let data):
-                    let response = Response(data: data)
+                    let response = Response(data: data, response: response.response)
                     completion(response, nil)
                 case .failure(let error):
                     completion(nil, error)

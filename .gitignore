@@ -1,7 +1,8 @@
 .DS_Store
 /.build
 /Packages
-# /*.xcodeproj
+/*.xcodeproj
+
 ### https://raw.github.com/github/gitignore/0c5ace9de99c220bb69012581d68ca6fa977449b/Swift.gitignore
 
 # Xcode
@@ -72,5 +73,3 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
-
-

@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
   spec.name         = 'Kiri'
-  spec.version      = '1.0.2'
-  spec.license      = { :type => 'BSD' }
+  spec.version      = '1.0.4'
+  spec.license      = { :type => 'MIT' }
   spec.homepage     = 'https://github.com/junkpiano/Kiri'
   spec.authors      = { 'Yusuke Ohashi' => 'github@junkpiano.me' }
   spec.summary      = 'Simple Network Abstraction Layer on top of Alamofire.'
